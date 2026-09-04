@@ -156,6 +156,7 @@ header {
   cursor: pointer;
 }
 
+/*
 .card-stack::before {
   content: "Click Me!";
   font-weight: bold;
@@ -165,6 +166,7 @@ header {
   left: -10%;
   transform: rotate(-20deg);
 }
+*/
 
 .card {
   position: absolute;
@@ -196,7 +198,7 @@ header {
 
 .card.front {
   z-index: 1000;
-  transform: rotate(0deg);
+  transform: rotate(0deg) translateY(5px) translateX(5px);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
