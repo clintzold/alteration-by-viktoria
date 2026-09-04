@@ -162,8 +162,8 @@ header {
   font-size: 1.25rem;
   position: absolute;
   top: -12%;
-  left: -15%;
-  transform: rotate(-30deg);
+  left: -10%;
+  transform: rotate(-20deg);
 }
 
 .card {
