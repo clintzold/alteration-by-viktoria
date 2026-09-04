@@ -75,7 +75,12 @@
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container about-grid">
-        <img src="./stitching-hands.jpg" class="about-image reveal">
+        <div class="card-stack reveal">
+          <div class="card card1"><img class="stack-card-img" src="./pageant-costume.jpg" alt=""></div>
+          <div class="card card2"><img class="stack-card-img" src="./business-suit.jpg" alt=""></div>
+          <div class="card card3"><img class="stack-card-img" src="./flower-dress.jpg" alt=""></div>
+          <div class="card card4"><img class="stack-card-img" src="./wedding-dress.jpg" alt=""></div>
+        </div>
         <div class="reveal">
           <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Craftsmanship in Every Stitch</h2>
           <p>With over a decade of fabric expertise, we treat clothing as more than fashion—it's an expression of your confidence. Every dynamic cut, precision hem, and stitch is intentionally executed to prioritize form, utility, and timeless style.</p>
@@ -94,8 +99,8 @@
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials">
         <h2 class="section-title reveal">My Happy Customers</h2>
-      <div class="container reveal testimonial-grid">
-        <div class="testimonial">
+      <div class="container testimonial-grid">
+        <div class="testimonial reveal">
           <div class="speech-bubble">
             <p>Viktoria does amazing work. She exceeded all expectations and I thoroughly enjoyed working with her. Highly recommend.</p>
             <div class="rating">
@@ -114,7 +119,7 @@
             Jane Doe
           </div>
         </div>
-        <div class="testimonial">
+        <div class="testimonial reveal">
           <div class="speech-bubble">
             <p>Viktoria does amazing work. She exceeded all expectations and I thoroughly enjoyed working with her. Highly recommend.</p>
             <div class="rating">
@@ -133,7 +138,7 @@
             Jane Doe
           </div>
         </div>
-        <div class="testimonial">
+        <div class="testimonial reveal">
           <div class="speech-bubble">
             <p>Viktoria does amazing work. She exceeded all expectations and I thoroughly enjoyed working with her. Highly recommend.</p>
             <div class="rating">
@@ -208,6 +213,25 @@
           reveal.classList.add('active');
         }
       });
+    }
+
+    const cardStack = document.querySelector('.card-stack')
+    const cards = document.querySelectorAll('.card')
+    let shuffleCounter = 2
+
+    cardStack.addEventListener('click', shuffleCards)
+
+    function shuffleCards() {
+      cards.forEach(card => {
+        card.classList.remove('front')
+      })
+      if(shuffleCounter < 0) {
+        shuffleCounter = 3
+      }
+      cards[shuffleCounter].classList.toggle('front')
+
+      shuffleCounter--
+
     }
 
     // Initialize scroll event listener
